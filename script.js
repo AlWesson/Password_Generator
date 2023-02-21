@@ -3,9 +3,32 @@
 // (initial comment) I need a way to prompt the user with password length (8-128), lowercase, uppercase, numeric, and/or special characters.
 
 
-var generateBtn = document.querySelector("#generate"); // (initial comment)  This is the id for the red Generate Password button.
+let lenHolder = 0;
+let specialString = "!`~@#$%^&*()_-+=|/?><:;{}[]'.,"; // need to find a way to include " and \.
+let lowerString = "abcdefghijklmnopqrstuvwxyz";
+let upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numString = "0123456789";
 
+let generateBtn = document.querySelector("#generate"); // (initial comment)  This is the id for the red Generate Password button.
 
+function generatePassword() {
+  let Len = prompt("What is your desired password length? (Note: Password must be between 8-128 characters.)");
+  if (Len < 8 && Len > 0){
+    // if prompt input is less than 8, this alert will pop up.
+    window.alert('Sorry, your password must be more than 8 characters. Please retry password generation.');
+    }
+  
+    if (Len > 128){ 
+    // if prompt input is greater than 128, this alert will pop up.
+    window.alert('Sorry, your password has too many characters. Please retry password generation.');
+    
+  }
+    // if cancel, print nothing.
+  if (Len == null){
+    return '';
+  }
+
+}
 
 
 // Write password to the #password input
