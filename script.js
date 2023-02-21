@@ -65,14 +65,15 @@ function generatePassword() {
     //return lenValueHolder;  // testing if lenValueHolder returns only the desired password length.
     //retrun passwordIngredients;   // testing if passwordIngredients holds only confirms that return a true value.
     
+    // separate string into individual characters placed in array.
     let sepIngredients = passwordIngredients.split("");
-    // return sepIngredients; // string was made into an array.
+    // return sepIngredients; // testing that string was made into an array.
    
 
-    let i = 0;
-    while (i <= lenValueHolder){
-
-      
+    // this loop will run until i reaches the desired password length.
+    for (let i = 0; i < lenValueHolder; i++){
+      // push a random element from sepIngredients into compPasswordTemp every time the loop runs until the loop counter ends.
+      compPasswordTemp.push(sepIngredients.splice(Math.floor(Math.random() * sepIngredients.length), 1) [0]);
 
     }
     
