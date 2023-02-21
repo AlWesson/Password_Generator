@@ -4,13 +4,17 @@
 
 
 let lenValueHolder = 0; // will hold the value of password length.
-let passwordIngredients = '';
+let passwordIngredients = ''; // will hold all strings of character types user wants incorperated in generated password.
+let compPasswordTemp = [];  // will hold all the random elements for generated password
+let compleatedPassword = ''; // will hold the final results for generated password.
+
 let specialString = "!`~@#$%^&*()_-+=|/?><:;{}[]'.,"; // need to include " and \.
 let lowerString = "abcdefghijklmnopqrstuvwxyz";
 let upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numString = "0123456789";
 
 let generateBtn = document.querySelector("#generate"); // (initial comment)  This is the id for the red Generate Password button.
+
 
 function generatePassword() {
   let Len = prompt("What is your desired password length? (Note: Password must be between 8-128 characters.)");
@@ -29,29 +33,49 @@ function generatePassword() {
   if (Len == null){
     return '';
   }
-  while (Len >= 8 && Len <= 128){ // as long as the Len is within the acceptable password length, proceed with these confirms.
+  
+  while (Len >= 8 && Len <= 128){ // as long as the Len is within the acceptable password length range, proceed with these confirms.
     lenValueHolder = Len;
 
     let lowerProm = confirm('Would you like your password to include lowercase letters?');
-    if (lowerProm = true){
+    if (lowerProm == true){
       // if user selects 'ok', the contents of lowerString is made available to the password generator.
       passwordIngredients += lowerString;
     }
     let upperProm = confirm('Would you like your password to include uppercase letters?');
-    if (upperProm = true){
+    if (upperProm == true){
       // if user selects 'ok', the contents of upperString is made available to the password generator. 
       passwordIngredients += upperString;
     }
     let numProm = confirm('Would you like your password to include numbers?');
-    if (numProm = true){
+    if (numProm == true){
       // if user selects 'ok', the contents of numString is made available to the password generator.
       passwordIngredients += numString;
     }
     let specProm = confirm('Would you like your password to include special characters?');
-    if(specProm = true){
+    if(specProm == true){
       // if user selects 'ok', the contents of specialString is made available to the password generator.
       passwordIngredients += specialString;
     }
+    if(lowerProm == false && upperProm == false && numProm == false && specProm == false){
+      // if no character type was selected (if all confirms returned false), throw this alert and return nothing to the screen.
+      window.alert('No character type was selected. Please retry generating a password with at least one character type.');
+      return '';
+    }
+    //return lenValueHolder;  // testing if lenValueHolder returns only the desired password length.
+    //retrun passwordIngredients;   // testing if passwordIngredients holds only confirms that return a true value.
+    
+    let sepIngredients = passwordIngredients.split("");
+    // return sepIngredients; // string was made into an array.
+   
+
+    let i = 0;
+    while (i <= lenValueHolder){
+
+      
+
+    }
+    
   }
 
 }
