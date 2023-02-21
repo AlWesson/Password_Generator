@@ -16,7 +16,11 @@ let numString = "0123456789";
 let generateBtn = document.querySelector("#generate"); // (initial comment)  This is the id for the red Generate Password button.
 
 
+
 function generatePassword() {
+
+  
+
   let Len = prompt("What is your desired password length? (Note: Password must be between 8-128 characters.)");
   if (Len < 8 && Len > 0){
     // if prompt input is less than 8, this alert will pop up.
@@ -65,15 +69,23 @@ function generatePassword() {
     //return lenValueHolder;  // testing if lenValueHolder returns only the desired password length.
     //retrun passwordIngredients;   // testing if passwordIngredients holds only confirms that return a true value.
     
+   
+    
+    
     // separate string into individual characters placed in array.
     let sepIngredients = passwordIngredients.split("");
     // return sepIngredients; // testing that string was made into an array.
-   
+    
+    
 
     // this loop will run until i reaches the desired password length.
     for (let i = 0; i < lenValueHolder; i++){
+
+      // refreshes the array with all new elements so that each increment of lenValueHolder has a full pool of characters for true random.
+      let temp = [...sepIngredients];
+
       // push a random element from sepIngredients into compPasswordTemp every time the loop runs until the loop counter ends.
-      compPasswordTemp.push(sepIngredients.splice(Math.floor(Math.random() * sepIngredients.length), 1) [0]);
+      compPasswordTemp.push(temp.splice(Math.floor(Math.random() * temp.length), 1) [0]);
 
     }
     
@@ -87,6 +99,7 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
+  
   var password = generatePassword(); // (initial comment) generatePassword doesnt currently exist. 
   var passwordText = document.querySelector("#password"); // (initial comment) #password is an id in the html file. This id displays the password onto the page where the id is located.
 
