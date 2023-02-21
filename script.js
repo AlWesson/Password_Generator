@@ -77,6 +77,9 @@ function generatePassword() {
 
     }
     
+    // this will return the randomly selected elements for the generated password back into a string for the finished product!
+    compleatedPassword = compPasswordTemp.join("");
+    return compleatedPassword;
   }
 
 }
@@ -87,9 +90,9 @@ function writePassword() {
   var password = generatePassword(); // (initial comment) generatePassword doesnt currently exist. 
   var passwordText = document.querySelector("#password"); // (initial comment) #password is an id in the html file. This id displays the password onto the page where the id is located.
 
-  passwordText.value = password; //
+  passwordText.value = password; 
   
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); // 
+generateBtn.addEventListener("click", writePassword);  
