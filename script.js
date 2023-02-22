@@ -17,6 +17,7 @@ let generateBtn = document.querySelector("#generate"); // (initial comment)  Thi
 
 
 
+
 function generatePassword() {
 
   
@@ -89,9 +90,15 @@ function generatePassword() {
 
     }
     
-    // this will return the randomly selected elements for the generated password back into a string for the finished product!
+    // this will return the randomly selected elements for the generated password back into a string for the finished product.
     compleatedPassword = compPasswordTemp.join("");
-    return compleatedPassword;
+    
+    window.alert(compleatedPassword); // displays the password into an alert window.
+    return '';  // Ends the program.
+    
+    
+    // This returns the password into the textarea.
+    //return compleatedPassword;
   }
 
 }
