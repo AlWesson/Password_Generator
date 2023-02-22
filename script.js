@@ -93,7 +93,7 @@ function generatePassword() {
     // this will return the randomly selected elements for the generated password back into a string for the finished product.
     compleatedPassword = compPasswordTemp.join("");
     
-    window.alert(compleatedPassword); // displays the password into an alert window.
+    window.alert('Your password is: ' + ' ' + compleatedPassword); // displays the password into an alert window.
     return '';  // Ends the program.
     
     
